@@ -7,23 +7,39 @@
 //
 
 #import "ViewController.h"
+#import "CDPickerView.h"
+#import "UIView+CDExtension.h"
 
 @interface ViewController ()
 
+@property (nonatomic, strong) CDPickerView *pickerView;
+@property (nonatomic, assign, getter=isShowing) BOOL showing;
 @end
+
+#define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.pickerView = [[CDPickerView alloc] initWithFrame:(CGRect){0, KSCREENHEIGHT, KSCREENWIDTH, 200}];
+    _pickerView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:_pickerView];
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    CGFloat pickerViewY;
+    if (_showing) {
+        pickerViewY  = KSCREENHEIGHT - _pickerView.height;
+    }else{
+        pickerViewY  = KSCREENHEIGHT;
+    }
+    [UIView animateWithDuration:0.3 animations:^{
+        _pickerView.y = pickerViewY;
+    }];
+    _showing = !_showing;
 }
-
 
 @end

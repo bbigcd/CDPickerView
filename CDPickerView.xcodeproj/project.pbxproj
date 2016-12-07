@@ -15,6 +15,8 @@
 		54E9A5551DF84E0F00268D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54E9A5531DF84E0F00268D3F /* LaunchScreen.storyboard */; };
 		54E9A5601DF84E1000268D3F /* CDPickerViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E9A55F1DF84E1000268D3F /* CDPickerViewTests.m */; };
 		54E9A56B1DF84E1000268D3F /* CDPickerViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E9A56A1DF84E1000268D3F /* CDPickerViewUITests.m */; };
+		54E9A57A1DF84F4D00268D3F /* CDPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E9A5791DF84F4D00268D3F /* CDPickerView.m */; };
+		54E9A57D1DF8581E00268D3F /* UIView+CDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E9A57C1DF8581E00268D3F /* UIView+CDExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		54E9A5661DF84E1000268D3F /* CDPickerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDPickerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E9A56A1DF84E1000268D3F /* CDPickerViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDPickerViewUITests.m; sourceTree = "<group>"; };
 		54E9A56C1DF84E1000268D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54E9A5781DF84F4D00268D3F /* CDPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPickerView.h; sourceTree = "<group>"; };
+		54E9A5791DF84F4D00268D3F /* CDPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPickerView.m; sourceTree = "<group>"; };
+		54E9A57B1DF8581E00268D3F /* UIView+CDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CDExtension.h"; sourceTree = "<group>"; };
+		54E9A57C1DF8581E00268D3F /* UIView+CDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CDExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +109,12 @@
 			children = (
 				54E9A5481DF84E0F00268D3F /* AppDelegate.h */,
 				54E9A5491DF84E0F00268D3F /* AppDelegate.m */,
+				54E9A57B1DF8581E00268D3F /* UIView+CDExtension.h */,
+				54E9A57C1DF8581E00268D3F /* UIView+CDExtension.m */,
 				54E9A54B1DF84E0F00268D3F /* ViewController.h */,
 				54E9A54C1DF84E0F00268D3F /* ViewController.m */,
+				54E9A5781DF84F4D00268D3F /* CDPickerView.h */,
+				54E9A5791DF84F4D00268D3F /* CDPickerView.m */,
 				54E9A54E1DF84E0F00268D3F /* Main.storyboard */,
 				54E9A5511DF84E0F00268D3F /* Assets.xcassets */,
 				54E9A5531DF84E0F00268D3F /* LaunchScreen.storyboard */,
@@ -273,7 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E9A57D1DF8581E00268D3F /* UIView+CDExtension.m in Sources */,
 				54E9A54D1DF84E0F00268D3F /* ViewController.m in Sources */,
+				54E9A57A1DF84F4D00268D3F /* CDPickerView.m in Sources */,
 				54E9A54A1DF84E0F00268D3F /* AppDelegate.m in Sources */,
 				54E9A5471DF84E0F00268D3F /* main.m in Sources */,
 			);
