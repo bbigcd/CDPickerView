@@ -59,6 +59,7 @@
     if (!_cancelBtn) {
         CGRect frame = (CGRect){10, 10, 60, 30};
         _cancelBtn = [self createButtonWithTitle:@"取消" Frame:frame];
+        [_cancelBtn addTarget:self action:@selector(didSelecteCancelBtnAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelBtn;
 }
@@ -67,6 +68,7 @@
     if (!_confirmBtn) {
         CGRect frame = (CGRect){KSCREENWIDTH - 70, 10, 60, 30};
         _confirmBtn = [self createButtonWithTitle:@"确定" Frame:frame];
+        [_confirmBtn addTarget:self action:@selector(didSelecteConfirmBtnAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _confirmBtn;
 }
@@ -97,6 +99,20 @@
     return _pickerView;
 }
 
+
+#pragma mark --CDPickerViewDelegate--
+
+- (void)didSelecteCancelBtnAction{
+    if (self.delegate) {
+        [self.delegate didSelecteCancelBtn];
+    }
+}
+
+- (void)didSelecteConfirmBtnAction{
+    if (self.delegate) {
+        [self.delegate didSelecteConfirmBtn];
+    }
+}
 
 #pragma Mark - UIPickerViewDelegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{

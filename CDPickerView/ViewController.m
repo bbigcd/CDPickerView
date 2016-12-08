@@ -10,10 +10,10 @@
 #import "CDPickerView.h"
 #import "UIView+CDExtension.h"
 
-@interface ViewController ()
+@interface ViewController ()<CDPickerViewDelegate>
 
 @property (nonatomic, strong) CDPickerView *pickerView;
-@property (nonatomic, assign, getter=isShowing) BOOL showing;
+
 @end
 
 #define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
@@ -24,22 +24,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pickerView = [[CDPickerView alloc] initWithFrame:(CGRect){0, KSCREENHEIGHT, KSCREENWIDTH, 200}];
+    _pickerView.delegate = self;
     _pickerView.backgroundColor = [UIColor cyanColor];
     [self.view addSubview:_pickerView];
 }
 
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    CGFloat pickerViewY;
-    if (_showing) {
-        pickerViewY  = KSCREENHEIGHT - _pickerView.height;
-    }else{
-        pickerViewY  = KSCREENHEIGHT;
-    }
     [UIView animateWithDuration:0.3 animations:^{
-        _pickerView.y = pickerViewY;
+        _pickerView.y = KSCREENHEIGHT - _pickerView.height;
     }];
-    _showing = !_showing;
+}
+
+#pragma mark --CDPickerViewDelegate--
+
+- (void)didSelecteCancelBtn{
+    [UIView animateWithDuration:0.3 animations:^{
+        _pickerView.y = KSCREENHEIGHT;
+    }];
+}
+
+- (void)didSelecteConfirmBtn{
+    [UIView animateWithDuration:0.3 animations:^{
+        _pickerView.y = KSCREENHEIGHT;
+    }];
 }
 
 @end
